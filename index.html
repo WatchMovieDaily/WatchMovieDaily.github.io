@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="google" content="notranslate">
+  <title>Tension Is Growing: Cyberpunk 2077 Release Date Is Postponed! What To Do?!</title>
 
+  <link href="https://littlecdn.com/cd-templates-landings/games/game-news-youtube-video/css/index.css?v=1" rel="stylesheet" type="text/css">
+
+  <script>
+    window.osVerUA = '';
+    if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      navigator.userAgentData.getHighEntropyValues(["platformVersion"]).then((uaData) => {
+        if (uaData.platformVersion) {
+          window.osVerUA = `&os_version=${uaData.platformVersion}`;
+        }
+      });
+    }
+  </script>
+
+  <script>
+    (function (l) {
+      var url = l.pathname + l.search + '&mprtr=1';
+      window.addEventListener('DOMContentLoaded', function () {
+        if (window.osVerUA) {
+          url += window.osVerUA;
+        }
+        try {
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', url, true);
+          xhr.send();
+        } catch (e) {
+          console.error('Impression Logger Partial Error:', e);
+        }
+      });
+    })(window.location);
+  </script>
+
+  <script>
+    (function() {
+      var browser = (function() {
+        var ua = navigator.userAgent, tem, M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        if (/trident/i.test(M[1])) {
+          tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+          return { name: 'IE', version: (tem[1] || '') };
+        }
+        if (M[1] === 'Chrome') {
+          tem = ua.match(/\bOPR|Edge\/(\d+)/);
+          if (tem != null) { return { name: 'Opera', version: tem[1] }; }
+        }
+        M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+        if ((tem = ua.match(/version\/(\d+)/i)) != null) { M.splice(1, 1, tem[1]); }
+        return { name: M[0], version: M[1] };
+      })();
+
+      function sendBeacon(url, data, _settings) {
+        var xhr = ('XMLHttpRequest' in window) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        xhr.open('POST', url, false);
+        xhr.withCredentials = true;
+        xhr.setRequestHeader('Accept', '*/*');
+        if (typeof data === 'string') {
+          xhr.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+          xhr.responseType = 'text/plain';
+        } else if (Object.prototype.toString.call(data) === '[object Blob]') {
+          if (data.type) {
+            xhr.setRequestHeader('Content-Type', data.type);
+          }
+        }
+        if (typeof _settings === 'object' && !isNaN(_settings.timeout)) {
+          setTimeout(function() {
+            if (xhr.readyState !== 4) {
+              xhr.abort();
+            }
+          }, _settings.timeout);
+        }
+        xhr.send(data);
+        return true;
+      }
+
+      function knock() {
+        if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon !== 'undefined') {
+          navigator.sendBeacon('', 'Browser with BeaconAPI Support');
+        } else {
+          sendBeacon('', 'Browser without BeaconAPI Support: ' + browser.name + ' ' + browser.version);
+        }
+      }
+
+      var knocked = false;
+      document.addEventListener('click', function(e) {
+        if (!knocked && (e.target.tagName === 'A' || e.target.getAttribute('data-href'))) {
+          knock();
+          knocked = true;
+        }
+      });
+    })();
+  </script>
+</head>
+<body>
+  <!-- Content of the article will go here -->
+</body>
+</html>
