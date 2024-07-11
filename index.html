@@ -3,32 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <title>Watch Movie Daily</title>
+    <style>
+        /* Simple styling for the button */
+        .random-link-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .random-link-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website</h1>
-    <p>This is a paragraph of text on my very first web page.</p>
-    <a href="https://www.example.com">Visit Example.com</a>
+    <h1>List of Movies Comming soon---Wait</h1>
+    <p>Only Streaming...Cant download.</p>
+    <h2 id="script-info"></h2> <!-- This will display which script was loaded -->
 
-    <h2>About Me</h2>
-    <p>Here is some information about me.</p>
-    
-    <h2>Contact</h2>
-    <p>You can contact me at <a href="mailto:myemail@example.com">myemail@example.com</a>.</p>
-    
-    <ul>
-        <li>First item</li>
-        <li>Second item</li>
-        <li>Third item</li>
-    </ul>
+    <!-- Button to open random link -->
+    <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
 
-    <ol>
-        <li>First ordered item</li>
-        <li>Second ordered item</li>
-        <li>Third ordered item</li>
-    </ol>
+    <script>
+        // Array of script configurations
+        const scripts = [
+            { type: 'static', src: '//thubanoa.com/1?z=7714416' },
+            { type: 'static', src: '//thubanoa.com/1?z=7714415' },
+            { type: 'static', src: '//thubanoa.com/1?z=7714414' },
+            { type: 'static', src: '//thubanoa.com/1?z=7714413' },
+            { type: 'static', src: '//thubanoa.com/1?z=7714412' },
+            { type: 'dynamic', domain: 'punoocke.com', id: 7714409 },
+            { type: 'dynamic', domain: 'loajawun.com', id: 7714406 },
+            { type: 'dynamic', domain: 'vooculok.com', id: 7714404 },
+            { type: 'dynamic', domain: 'rouwhapt.com', id: 7714402 },
+            { type: 'dynamic', domain: 'offshuppetchan.com', id: 7714400 }
+        ];
 
-    <img src="https://www.example.com/image.jpg" alt="Example image">
+        // Function to load a random script
+        function loadRandomScript() {
+            const randomIndex = Math.floor(Math.random() * scripts.length);
+            const scriptConfig = scripts[randomIndex];
+            const scriptElement = document.createElement('script');
+            const scriptInfo = document.getElementById('script-info');
+
+            if (scriptConfig.type === 'dynamic') {
+                scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
+                scriptInfo.textContent = `Loaded Dynamic Script: Domain = ${scriptConfig.domain}, ID = ${scriptConfig.id}`;
+            } else if (scriptConfig.type === 'static') {
+                scriptElement.src = scriptConfig.src;
+                scriptElement.async = true;
+                scriptElement.setAttribute('data-cfasync', 'false');
+                scriptInfo.textContent = `Loaded Static Script: Src = ${scriptConfig.src}`;
+            }
+
+            try {
+                (document.body || document.documentElement).appendChild(scriptElement);
+            } catch (e) {
+                console.error('Error appending script:', e);
+            }
+        }
+
+        // Load a random script on page load
+        window.onload = loadRandomScript;
+
+        // Array of links
+        const links = [
+            'https://woupoulouca.net/4/7714399',
+            'https://atservineor.com/4/7714398',
+            'https://katchoph.com/4/7714395',
+            'https://ptognemoo.com/4/7714397',
+            'https://deenoacepok.com/4/7714395'            
+        ];
+
+        // Function to open a random link
+        function openRandomLink() {
+            const randomIndex = Math.floor(Math.random() * links.length);
+            const randomLink = links[randomIndex];
+            window.open(randomLink, '_blank');
+        }
+    </script>
 </body>
 </html>
-
