@@ -26,21 +26,32 @@
 <body>
     <h1>List of Movies Comming soon---Wait</h1>
     <p>Only Streaming...Cant download.</p>
-    <h2 id="script-info"></h2> <!-- This will display which script was loaded -->
+    <p>##############################################################################################</p>
+
+    <div>
+    <h3 id="script-info"></h3> <!-- This will display which script was loaded -->
+    </div>
+
+    <div>
+    <h3 id="script-info2"></h3> <!-- This will display which script was loaded -->
+    </div>
+    <p>##############################################################################################</p>
+
+
 
     <!-- Button to open random link -->
     <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
-
+    
     <script>
         // Array of script configurations
         const scripts = [
+            { type: 'dynamic', domain: 'dicouksa.com', id: 7754073 },
             { type: 'static', src: '//thubanoa.com/1?z=7714416' },
             { type: 'static', src: '//thubanoa.com/1?z=7714415' },
             { type: 'static', src: '//thubanoa.com/1?z=7714414' },
             { type: 'static', src: '//thubanoa.com/1?z=7714413' },
             { type: 'static', src: '//thubanoa.com/1?z=7714412' },
-            { type: 'dynamic', domain: 'punoocke.com', id: 7714409 },
-            { type: 'dynamic', domain: 'offshuppetchan.com', id: 7714400 }
+            { type: 'dynamic', domain: 'whouseem.com', id: 7754075 },
         ];
 
         // Function to load a random script
@@ -102,7 +113,7 @@
             const randomIndex = Math.floor(Math.random() * scripts.length);
             const scriptConfig = scripts[randomIndex];
             const scriptElement = document.createElement('script');
-            const scriptInfo = document.getElementById('script-info');
+            const scriptInfo = document.getElementById('script-info2');
 
             if (scriptConfig.type === 'dynamic') {
                 scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
