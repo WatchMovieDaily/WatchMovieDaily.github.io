@@ -127,5 +127,20 @@
           window.open(randomLink, '_blank');
       }
   </script>
+
+
+  <h1>Test User Agent</h1>
+    <p id="headers"></p>
+
+    <script>
+        fetch('https://httpbin.org/headers')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('headers').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+
+  
 </body>
 </html>
