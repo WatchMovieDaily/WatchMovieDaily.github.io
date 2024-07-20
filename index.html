@@ -24,52 +24,51 @@
     </style>
 </head>
 <body>
-    <h1>List of Movies Comming soon---Wait</h1>
-    <p>Only Streaming...Cant download.</p>
+    <h1>List of Movies Coming soon---Wait</h1>
+    <p>Only Streaming...Can't download.</p>
     <p>##############################################################################################</p>
 
     <div>
-    <h3 id="script-info"></h3> <!-- This will display which script was loaded -->
+        <h3 id="dynamic-script-info"></h3> <!-- This will display which dynamic script was loaded -->
     </div>
 
     <div>
-    <h3 id="script-info2"></h3> <!-- This will display which script was loaded -->
+        <h3 id="static-script-info"></h3> <!-- This will display which static script was loaded -->
     </div>
     <p>##############################################################################################</p>
-
-
 
     <!-- Button to open random link -->
     <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
     
     <script>
-        // Array of script configurations
-        const scripts = [
+        // Arrays of script configurations
+        const dynamicScripts = [
             { type: 'dynamic', domain: 'dicouksa.com', id: 7754073 },
+            { type: 'dynamic', domain: 'whouseem.com', id: 7754075 },
+            { type: 'dynamic', domain: 'punoocke.com', id: 7714409 },
+            { type: 'dynamic', domain: 'loajawun.com', id: 7714406 },
+            { type: 'dynamic', domain: 'vooculok.com', id: 7714404 },
+            { type: 'dynamic', domain: 'rouwhapt.com', id: 7714402 },
+            { type: 'dynamic', domain: 'offshuppetchan.com', id: 7714400 }
+        ];
+
+        const staticScripts = [
             { type: 'static', src: '//thubanoa.com/1?z=7714416' },
             { type: 'static', src: '//thubanoa.com/1?z=7714415' },
             { type: 'static', src: '//thubanoa.com/1?z=7714414' },
             { type: 'static', src: '//thubanoa.com/1?z=7714413' },
-            { type: 'static', src: '//thubanoa.com/1?z=7714412' },
-            { type: 'dynamic', domain: 'whouseem.com', id: 7754075 },
+            { type: 'static', src: '//thubanoa.com/1?z=7714412' }
         ];
 
-        // Function to load a random script
-        function loadRandomScript() {
-            const randomIndex = Math.floor(Math.random() * scripts.length);
-            const scriptConfig = scripts[randomIndex];
+        // Function to load a random dynamic script
+        function loadRandomDynamicScript() {
+            const randomIndex = Math.floor(Math.random() * dynamicScripts.length);
+            const scriptConfig = dynamicScripts[randomIndex];
             const scriptElement = document.createElement('script');
-            const scriptInfo = document.getElementById('script-info');
+            const scriptInfo = document.getElementById('dynamic-script-info');
 
-            if (scriptConfig.type === 'dynamic') {
-                scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
-                scriptInfo.textContent = `Loaded Dynamic Script: Domain = ${scriptConfig.domain}, ID = ${scriptConfig.id}`;
-            } else if (scriptConfig.type === 'static') {
-                scriptElement.src = scriptConfig.src;
-                scriptElement.async = true;
-                scriptElement.setAttribute('data-cfasync', 'false');
-                scriptInfo.textContent = `Loaded Static Script: Src = ${scriptConfig.src}`;
-            }
+            scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
+            scriptInfo.textContent = `Loaded Dynamic Script: Domain = ${scriptConfig.domain}, ID = ${scriptConfig.id}`;
 
             try {
                 (document.body || document.documentElement).appendChild(scriptElement);
@@ -78,8 +77,30 @@
             }
         }
 
-        // Load a random script on page load
-        window.onload = loadRandomScript;
+        // Function to load a random static script
+        function loadRandomStaticScript() {
+            const randomIndex = Math.floor(Math.random() * staticScripts.length);
+            const scriptConfig = staticScripts[randomIndex];
+            const scriptElement = document.createElement('script');
+            const scriptInfo = document.getElementById('static-script-info');
+
+            scriptElement.src = scriptConfig.src;
+            scriptElement.async = true;
+            scriptElement.setAttribute('data-cfasync', 'false');
+            scriptInfo.textContent = `Loaded Static Script: Src = ${scriptConfig.src}`;
+
+            try {
+                (document.body || document.documentElement).appendChild(scriptElement);
+            } catch (e) {
+                console.error('Error appending script:', e);
+            }
+        }
+
+        // Load one random static script and one random dynamic script on page load
+        window.onload = function() {
+            loadRandomDynamicScript();
+            loadRandomStaticScript();
+        };
 
         // Array of links
         const links = [
@@ -97,45 +118,5 @@
             window.open(randomLink, '_blank');
         }
     </script>
-
-  <script>
-        // Array of script configurations
-        const scripts = [
-            { type: 'dynamic', domain: 'punoocke.com', id: 7714409 },
-            { type: 'dynamic', domain: 'loajawun.com', id: 7714406 },
-            { type: 'dynamic', domain: 'vooculok.com', id: 7714404 },
-            { type: 'dynamic', domain: 'rouwhapt.com', id: 7714402 },
-            { type: 'dynamic', domain: 'offshuppetchan.com', id: 7714400 }
-        ];
-
-        // Function to load a random script
-        function loadRandomScript2() {
-            const randomIndex = Math.floor(Math.random() * scripts.length);
-            const scriptConfig = scripts[randomIndex];
-            const scriptElement = document.createElement('script');
-            const scriptInfo = document.getElementById('script-info2');
-
-            if (scriptConfig.type === 'dynamic') {
-                scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
-                scriptInfo.textContent = `Loaded Dynamic Script: Domain = ${scriptConfig.domain}, ID = ${scriptConfig.id}`;
-            } else if (scriptConfig.type === 'static') {
-                scriptElement.src = scriptConfig.src;
-                scriptElement.async = true;
-                scriptElement.setAttribute('data-cfasync', 'false');
-                scriptInfo.textContent = `Loaded Static Script: Src = ${scriptConfig.src}`;
-            }
-
-            try {
-                (document.body || document.documentElement).appendChild(scriptElement);
-            } catch (e) {
-                console.error('Error appending script:', e);
-            }
-        }
-
-        // Load a random script on page load
-        window.onload = loadRandomScript2;
-    </script>
-
-    
 </body>
 </html>
