@@ -3,22 +3,24 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-  <title>Watch Movie Daily</title>
+    <title>OnlineCVPortal</title> 
     <script>
         // Generate a random number between 0 and 1
         var randomNumber = Math.random();
         
         // Define arrays for ad domains and IDs
-
-  const adScripts = [
-          { domain: 'dicouksa.com', id: 7754073 },
+var adScripts = [
+         { domain: 'dicouksa.com', id: 7754073 },
           { domain: 'whouseem.com', id: 7754075 },
           { domain: 'punoocke.com', id: 7714409 },
           { domain: 'loajawun.com', id: 7714406 },
           { domain: 'vooculok.com', id: 7714404 },
           { domain: 'rouwhapt.com', id: 7714402 },
           { domain: 'offshuppetchan.com', id: 7714400 }
-      ];
+];
+
+  
+
         
         // Randomly select an index from the adScripts array
         var randomIndex = Math.floor(randomNumber * adScripts.length);
@@ -45,24 +47,20 @@
     </script>
 </head>
 <body>
- <h1>List of Movies Coming soon---Wait</h1>
-  <p>Only Streaming...Can't download.</p>
-  <p>##############################################################################################</p>    
-<h2>Selected ID: <span id="secondSelectedId"></span></h2>
-  <p>##############################################################################################</p>
-
+    <h1>Welcome</h1>
+    <h2>Selected ID: <span id="secondSelectedId"></span></h2>
 
 
      <script>
         // Array of IDs for the second script
-        var secondIds = [
+
+               var secondIds = [
             7714416, // Example ID 1
             7714415, // Example ID 2
             7714414,
             7714413,
             7714412,
         ];
-
 
         // Function to load the second script dynamically
         function loadSecondScript(id) {
