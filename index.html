@@ -2,145 +2,93 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <title>Watch Movie Daily</title>
-  <style>
-      /* Simple styling for the button */
-      .random-link-button {
-          display: block;
-          margin: 20px auto;
-          padding: 10px 20px;
-          font-size: 16px;
-          background-color: #007BFF;
-          color: white;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-      }
+    <script>
+        // Generate a random number between 0 and 1
+        var randomNumber = Math.random();
+        
+        // Define arrays for ad domains and IDs
 
-      .random-link-button:hover {
-          background-color: #0056b3;
-      }
-
-      /* Responsive styling for mobile devices */
-      @media (max-width: 600px) {
-          .random-link-button {
-              width: 80%;
-              font-size: 14px;
-              padding: 8px 16px;
-          }
-      }
-  </style>
+  const adScripts = [
+          { domain: 'dicouksa.com', id: 7754073 },
+          { domain: 'whouseem.com', id: 7754075 },
+          { domain: 'punoocke.com', id: 7714409 },
+          { domain: 'loajawun.com', id: 7714406 },
+          { domain: 'vooculok.com', id: 7714404 },
+          { domain: 'rouwhapt.com', id: 7714402 },
+          { domain: 'offshuppetchan.com', id: 7714400 }
+      ];
+        
+        // Randomly select an index from the adScripts array
+        var randomIndex = Math.floor(randomNumber * adScripts.length);
+        
+        // Use the randomly selected index to get the ad domain and ID
+        var adDomain = adScripts[randomIndex].domain;
+        var adId = adScripts[randomIndex].id;
+        
+        // Create and append the ad script dynamically
+        var adScript = document.createElement('script');
+        adScript.src = 'https://' + adDomain + '/400/' + adId;
+        try {
+            (document.body || document.documentElement).appendChild(adScript);
+        } catch (e) {
+            console.error('Error appending script:', e);
+        }
+        
+        // Display which ad ID is loaded in the body
+        document.addEventListener('DOMContentLoaded', function() {
+            var adInfo = document.createElement('p');
+            adInfo.textContent = 'Randomly loaded ad ID: ' + adId + ' from domain: ' + adDomain;
+            document.body.appendChild(adInfo);
+        });
+    </script>
 </head>
 <body>
-  <h1>List of Movies Coming soon---Wait</h1>
+ <h1>List of Movies Coming soon---Wait</h1>
   <p>Only Streaming...Can't download.</p>
+  <p>##############################################################################################</p>    
+<h2>Selected ID: <span id="secondSelectedId"></span></h2>
   <p>##############################################################################################</p>
 
-  <div>
-      <h3 id="dynamic-script-info"></h3> <!-- This will display which dynamic script was loaded -->
-  </div>
-
-  <div>
-      <h3 id="static-script-info"></h3> <!-- This will display which static script was loaded -->
-  </div>
-  <p>##############################################################################################</p>
-
-  <!-- Button to open random link -->
-  <button class="random-link-button" onclick="openRandomLink()">Open Random Link</button>
-  
-  <script>
-      // Arrays of script configurations
-      const dynamicScripts = [
-          { type: 'dynamic', domain: 'dicouksa.com', id: 7754073 },
-          { type: 'dynamic', domain: 'whouseem.com', id: 7754075 },
-          { type: 'dynamic', domain: 'punoocke.com', id: 7714409 },
-          { type: 'dynamic', domain: 'loajawun.com', id: 7714406 },
-          { type: 'dynamic', domain: 'vooculok.com', id: 7714404 },
-          { type: 'dynamic', domain: 'rouwhapt.com', id: 7714402 },
-          { type: 'dynamic', domain: 'offshuppetchan.com', id: 7714400 }
-      ];
-
-      const staticScripts = [
-          { type: 'static', src: '//thubanoa.com/1?z=7714416' },
-          { type: 'static', src: '//thubanoa.com/1?z=7714415' },
-          { type: 'static', src: '//thubanoa.com/1?z=7714414' },
-          { type: 'static', src: '//thubanoa.com/1?z=7714413' },
-          { type: 'static', src: '//thubanoa.com/1?z=7714412' }
-      ];
-
-      // Function to load a random dynamic script
-      function loadRandomDynamicScript() {
-          const randomIndex = Math.floor(Math.random() * dynamicScripts.length);
-          const scriptConfig = dynamicScripts[randomIndex];
-          const scriptElement = document.createElement('script');
-          const scriptInfo = document.getElementById('dynamic-script-info');
-
-          scriptElement.src = `https://${scriptConfig.domain}/400/${scriptConfig.id}`;
-          scriptInfo.textContent = `Loaded Dynamic Script: Domain = ${scriptConfig.domain}, ID = ${scriptConfig.id}`;
-
-          try {
-              (document.body || document.documentElement).appendChild(scriptElement);
-          } catch (e) {
-              console.error('Error appending script:', e);
-          }
-      }
-
-      // Function to load a random static script
-      function loadRandomStaticScript() {
-          const randomIndex = Math.floor(Math.random() * staticScripts.length);
-          const scriptConfig = staticScripts[randomIndex];
-          const scriptElement = document.createElement('script');
-          const scriptInfo = document.getElementById('static-script-info');
-
-          scriptElement.src = scriptConfig.src;
-          scriptElement.async = true;
-          scriptElement.setAttribute('data-cfasync', 'false');
-          scriptInfo.textContent = `Loaded Static Script: Src = ${scriptConfig.src}`;
-
-          try {
-              (document.body || document.documentElement).appendChild(scriptElement);
-          } catch (e) {
-              console.error('Error appending script:', e);
-          }
-      }
-
-      // Load one random static script and one random dynamic script on page load
-      window.onload = function() {
-          loadRandomDynamicScript();
-          loadRandomStaticScript();
-      };
-
-      // Array of links
-      const links = [
-          'https://woupoulouca.net/4/7714399',
-          'https://atservineor.com/4/7714398',
-          'https://katchoph.com/4/7714395',
-          'https://ptognemoo.com/4/7714397',
-          'https://deenoacepok.com/4/7714395'            
-      ];
-
-      // Function to open a random link
-      function openRandomLink() {
-          const randomIndex = Math.floor(Math.random() * links.length);
-          const randomLink = links[randomIndex];
-          window.open(randomLink, '_blank');
-      }
-  </script>
 
 
-  <h1>Test User Agent</h1>
-    <p id="headers"></p>
+     <script>
+        // Array of IDs for the second script
+        var secondIds = [
+            7714416, // Example ID 1
+            7714415, // Example ID 2
+            7714414,
+            7714413,
+            7714412,
+        ];
 
-    <script>
-        fetch('https://httpbin.org/headers')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('headers').textContent = JSON.stringify(data, null, 2);
-            })
-            .catch(error => console.error('Error:', error));
+
+        // Function to load the second script dynamically
+        function loadSecondScript(id) {
+            var script = document.createElement('script');
+            script.src = '//thubanoa.com/1?z=' + id;
+            script.async = true;
+            script.setAttribute('data-cfasync', 'false');
+            try {
+                (document.body || document.documentElement).appendChild(script);
+            } catch(e) {
+                console.error('Failed to append script:', e);
+            }
+        }
+
+        // Function to get a random ID from the array
+        function getRandomId(idsArray) {
+            var randomIndex = Math.floor(Math.random() * idsArray.length);
+            return idsArray[randomIndex];
+        }
+
+        // Get a random ID for the second script
+        var secondSelectedId = getRandomId(secondIds);
+        document.getElementById('secondSelectedId').textContent = secondSelectedId;
+
+        // Load the second script with the selected ID
+        loadSecondScript(secondSelectedId);
     </script>
-
-  
 </body>
 </html>
