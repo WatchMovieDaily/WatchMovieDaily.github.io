@@ -4,89 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>OnlineCVPortal</title> 
-    <script>
-        // Generate a random number between 0 and 1
-        var randomNumber = Math.random();
-        
-        // Define arrays for ad domains and IDs
-var adScripts = [
-         { domain: 'dicouksa.com', id: 7754073 },
-          { domain: 'whouseem.com', id: 7754075 },
-          { domain: 'punoocke.com', id: 7714409 },
-          { domain: 'loajawun.com', id: 7714406 },
-          { domain: 'vooculok.com', id: 7714404 },
-          { domain: 'rouwhapt.com', id: 7714402 },
-          { domain: 'offshuppetchan.com', id: 7714400 }
-];
-
-  
-
-        
-        // Randomly select an index from the adScripts array
-        var randomIndex = Math.floor(randomNumber * adScripts.length);
-        
-        // Use the randomly selected index to get the ad domain and ID
-        var adDomain = adScripts[randomIndex].domain;
-        var adId = adScripts[randomIndex].id;
-        
-        // Create and append the ad script dynamically
-        var adScript = document.createElement('script');
-        adScript.src = 'https://' + adDomain + '/400/' + adId;
-        try {
-            (document.body || document.documentElement).appendChild(adScript);
-        } catch (e) {
-            console.error('Error appending script:', e);
-        }
-        
-        // Display which ad ID is loaded in the body
-        document.addEventListener('DOMContentLoaded', function() {
-            var adInfo = document.createElement('p');
-            adInfo.textContent = 'Randomly loaded ad ID: ' + adId + ' from domain: ' + adDomain;
-            document.body.appendChild(adInfo);
-        });
-    </script>
+ <script src="https://alwingulla.com/88/tag.min.js" data-zone="78358" async data-cfasync="false"></script>
 </head>
 <body>
     <h1>Welcome</h1>
-    <h2>Selected ID: <span id="secondSelectedId"></span></h2>
-
-
-     <script>
-        // Array of IDs for the second script
-
-               var secondIds = [
-            7714416, // Example ID 1
-            7714415, // Example ID 2
-            7714414,
-            7714413,
-            7714412,
-        ];
-
-        // Function to load the second script dynamically
-        function loadSecondScript(id) {
-            var script = document.createElement('script');
-            script.src = '//thubanoa.com/1?z=' + id;
-            script.async = true;
-            script.setAttribute('data-cfasync', 'false');
-            try {
-                (document.body || document.documentElement).appendChild(script);
-            } catch(e) {
-                console.error('Failed to append script:', e);
-            }
-        }
-
-        // Function to get a random ID from the array
-        function getRandomId(idsArray) {
-            var randomIndex = Math.floor(Math.random() * idsArray.length);
-            return idsArray[randomIndex];
-        }
-
-        // Get a random ID for the second script
-        var secondSelectedId = getRandomId(secondIds);
-        document.getElementById('secondSelectedId').textContent = secondSelectedId;
-
-        // Load the second script with the selected ID
-        loadSecondScript(secondSelectedId);
-    </script>
 </body>
 </html>
