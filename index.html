@@ -12,13 +12,46 @@
   <body>
     <div class="container">
     <script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('aupoafto.com',7714404,document.createElement('script'))</script>
-<script type="text/javascript">
-    aclib.runInPagePush({
-        zoneId: '8739938',
-        refreshRate: 30,
-        maxAds: 2,
-    });
-</script>
+
+      
+  <script type="text/javascript">
+        // Array of ad scripts with different zoneIds
+        const adScripts = [
+            {
+                zoneId: '8739938',
+                refreshRate: 30,
+                maxAds: 2
+            },
+            {
+                zoneId: '8739958',
+                refreshRate: 30,
+                maxAds: 2
+            },
+            {
+                zoneId: '8739954',
+                refreshRate: 30,
+                maxAds: 2
+            }
+        ];
+
+        // Function to load a random script
+        function loadRandomAd() {
+            const randomIndex = Math.floor(Math.random() * adScripts.length);
+            const adScript = adScripts[randomIndex];
+
+            // Load the selected script
+            aclib.runInPagePush({
+                zoneId: adScript.zoneId,
+                refreshRate: adScript.refreshRate,
+                maxAds: adScript.maxAds
+            });
+        }
+
+        // Call the function to load a random ad script
+        loadRandomAd();
+    </script>
+
+      
 
       <h3>Laugh & Enjoy</h3>
       <div id="joke" class="joke">// Joke goes here</div>
